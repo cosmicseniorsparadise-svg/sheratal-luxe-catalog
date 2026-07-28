@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import { getProduct, formatPrice, whatsappUrl, products } from "@/lib/products";
+import { getProduct, formatPrice, whatsappUrl, products, type Product } from "@/lib/products";
 
 export const Route = createFileRoute("/product/$id")({
-  loader: ({ params }) => {
+  loader: ({ params }): { product: Product } => {
     const product = getProduct(params.id);
     if (!product) throw notFound();
     return { product };
