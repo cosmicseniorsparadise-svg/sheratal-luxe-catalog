@@ -26,7 +26,7 @@ export const Route = createFileRoute("/product/$id")({
 });
 
 function ProductDetail() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const [size, setSize] = useState<string | null>(null);
   const [imgIdx, setImgIdx] = useState(0);
 
