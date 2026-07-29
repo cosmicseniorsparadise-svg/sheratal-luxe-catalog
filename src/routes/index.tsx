@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero.jpg";
+import logoAsset from "@/assets/sheratal-logo.JPG.asset.json";
 import { products, formatPrice } from "@/lib/products";
 import { ProductImage } from "@/components/ProductImage";
 import { useReveal } from "@/hooks/use-reveal";
@@ -107,21 +107,20 @@ function Index() {
             </div>
           </div>
 
-          {/* RIGHT — editorial image */}
-          <div className="lg:col-span-7 relative">
+          {/* RIGHT — brand logo */}
+          <div className="lg:col-span-7 relative flex items-center justify-center">
             <div
               data-reveal
               data-delay="2"
-              className="relative aspect-[4/5] lg:aspect-[5/6] w-full overflow-hidden"
+              className="relative aspect-square w-full max-w-lg lg:max-w-xl overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-8 md:p-14"
             >
               <img
-                src={heroImg}
-                alt="Model in a hand-embroidered ivory and gold Sheratal couture piece"
-                width={1600}
-                height={2000}
-                className="h-full w-full object-cover"
+                src={logoAsset.url}
+                alt="Sheratal — Wear Stylish"
+                width={800}
+                height={800}
+                className="h-full w-full object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
             </div>
 
             <span aria-hidden className="absolute -top-3 -left-3 h-14 w-px bg-[color:var(--gold)]" />
@@ -129,23 +128,12 @@ function Index() {
             <span aria-hidden className="absolute -bottom-3 -right-3 h-14 w-px bg-[color:var(--gold)]" />
             <span aria-hidden className="absolute -bottom-3 -right-3 h-px w-14 bg-[color:var(--gold)]" />
 
-            <div
-              data-reveal
-              data-delay="3"
-              className="absolute -bottom-5 left-4 md:left-8 lg:-left-10 bg-[color:var(--background)] border border-[color:var(--border)] px-4 py-2.5 flex items-center gap-3 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)]"
-            >
-              <span className="h-px w-6 bg-[color:var(--gold)]" />
-              <span className="text-[0.6rem] tracking-[0.34em] uppercase text-[color:var(--ink)]">
-                Look No. 07 — Ivory &amp; Gold
-              </span>
-            </div>
-
             <span
               aria-hidden
               className="hidden lg:flex absolute -right-14 top-1/2 -translate-y-1/2 rotate-90 origin-center items-center gap-3 text-[0.6rem] tracking-[0.42em] uppercase text-[color:var(--muted-foreground)] whitespace-nowrap"
             >
               <span className="h-px w-8 bg-[color:var(--gold)]" />
-              Volume I · The House of Sheratal
+              Wear Stylish · The House of Sheratal
             </span>
           </div>
         </div>
