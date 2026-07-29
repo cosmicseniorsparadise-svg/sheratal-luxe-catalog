@@ -120,20 +120,15 @@ function ProductDetail() {
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
-              <Link
-                key={p.id}
-                to="/product/$id"
-                params={{ id: p.id }}
-                className="product-card group block"
-              >
-                <div className="overflow-hidden bg-[color:var(--muted)] aspect-[3/4]">
-                  <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover" />
-                </div>
-                <div className="mt-4 flex items-baseline justify-between">
-                  <h4 className="font-serif text-lg">{p.name}</h4>
-                  <span className="text-sm text-muted-foreground">{formatPrice(p.price)}</span>
-                </div>
-              </Link>
+              <div key={p.id} className="product-card">
+                <ProductImage id={p.id} alt={p.name} />
+                <Link to="/product/$id" params={{ id: p.id }} className="block mt-4">
+                  <div className="flex items-baseline justify-between">
+                    <h4 className="font-serif text-lg">{p.name}</h4>
+                    <span className="text-sm text-muted-foreground">{formatPrice(p.price)}</span>
+                  </div>
+                </Link>
+              </div>
             ))}
           </div>
         </section>
