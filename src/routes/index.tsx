@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero.jpg";
+import logoAsset from "@/assets/sheratal-logo.JPG.asset.json";
 import { products, formatPrice } from "@/lib/products";
 import { ProductImage } from "@/components/ProductImage";
 import { useReveal } from "@/hooks/use-reveal";
