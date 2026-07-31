@@ -108,20 +108,21 @@ function Index() {
           </div>
 
           {/* RIGHT — brand logo */}
-          <div className="lg:col-span-7 relative flex items-center justify-center">
+          <div className="lg:col-span-7 relative flex items-center justify-center self-center">
             <div
               data-reveal
               data-delay="2"
-              className="relative aspect-square w-full max-w-lg lg:max-w-xl overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-8 md:p-14"
+              className="relative aspect-square w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[440px] mx-auto flex items-center justify-center overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-10 md:p-12"
             >
               <img
                 src={logoAsset.url}
                 alt="Sheratal — Wear Stylish"
                 width={800}
                 height={800}
-                className="h-full w-full object-contain"
+                className="max-h-full max-w-full object-contain"
               />
             </div>
+
 
             <span aria-hidden className="absolute -top-3 -left-3 h-14 w-px bg-[color:var(--gold)]" />
             <span aria-hidden className="absolute -top-3 -left-3 h-px w-14 bg-[color:var(--gold)]" />
