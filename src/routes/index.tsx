@@ -191,14 +191,26 @@ function Index() {
               data-delay={String((i % 3) + 1)}
               className="product-card"
             >
-              <ProductImage id={p.id} alt={p.name} />
+              <ProductImage id={p.id} alt={p.name} controls={false} />
               <Link to="/product/$id" params={{ id: p.id }} className="mt-5 block">
-                <div className="flex items-baseline justify-between">
+                <div className="flex items-baseline justify-between gap-4">
                   <h4 className="font-serif text-xl">{p.name}</h4>
-                  <span className="text-sm text-muted-foreground">
-                    {formatPrice(p.price)}
+                  <span className="text-sm text-muted-foreground shrink-0">
+                    {p.salePrice != null ? (
+                      <>
+                        <span className="line-through opacity-60">
+                          {formatPrice(p.price)}
+                        </span>{" "}
+                        <span className="text-[color:var(--gold)]">
+                          {formatPrice(p.salePrice)}
+                        </span>
+                      </>
+                    ) : (
+                      formatPrice(p.price)
+                    )}
                   </span>
                 </div>
+
                 <span className="mt-1 block text-[0.68rem] tracking-[0.28em] uppercase text-[color:var(--gold)]">
                   {p.category}
                 </span>
