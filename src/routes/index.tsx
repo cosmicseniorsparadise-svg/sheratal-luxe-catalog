@@ -108,20 +108,21 @@ function Index() {
           </div>
 
           {/* RIGHT — brand logo */}
-          <div className="lg:col-span-7 relative flex items-center justify-center">
+          <div className="lg:col-span-7 relative flex items-center justify-center self-center">
             <div
               data-reveal
               data-delay="2"
-              className="relative aspect-square w-full max-w-lg lg:max-w-xl overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-8 md:p-14"
+              className="relative aspect-square w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[440px] mx-auto flex items-center justify-center overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-10 md:p-12"
             >
               <img
                 src={logoAsset.url}
                 alt="Sheratal — Wear Stylish"
                 width={800}
                 height={800}
-                className="h-full w-full object-contain"
+                className="max-h-full max-w-full object-contain"
               />
             </div>
+
 
             <span aria-hidden className="absolute -top-3 -left-3 h-14 w-px bg-[color:var(--gold)]" />
             <span aria-hidden className="absolute -top-3 -left-3 h-px w-14 bg-[color:var(--gold)]" />
@@ -190,14 +191,26 @@ function Index() {
               data-delay={String((i % 3) + 1)}
               className="product-card"
             >
-              <ProductImage id={p.id} alt={p.name} />
+              <ProductImage id={p.id} alt={p.name} controls={false} />
               <Link to="/product/$id" params={{ id: p.id }} className="mt-5 block">
-                <div className="flex items-baseline justify-between">
+                <div className="flex items-baseline justify-between gap-4">
                   <h4 className="font-serif text-xl">{p.name}</h4>
-                  <span className="text-sm text-muted-foreground">
-                    {formatPrice(p.price)}
+                  <span className="text-sm text-muted-foreground shrink-0">
+                    {p.salePrice != null ? (
+                      <>
+                        <span className="line-through opacity-60">
+                          {formatPrice(p.price)}
+                        </span>{" "}
+                        <span className="text-[color:var(--gold)]">
+                          {formatPrice(p.salePrice)}
+                        </span>
+                      </>
+                    ) : (
+                      formatPrice(p.price)
+                    )}
                   </span>
                 </div>
+
                 <span className="mt-1 block text-[0.68rem] tracking-[0.28em] uppercase text-[color:var(--gold)]">
                   {p.category}
                 </span>

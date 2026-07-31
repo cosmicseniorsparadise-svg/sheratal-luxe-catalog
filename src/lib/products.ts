@@ -16,6 +16,8 @@ export type Product = {
   name: string;
   category: "Gowns" | "Sarees" | "Lehengas" | "Kurta Sets" | "Co-ords";
   price: number;
+  /** Optional discounted price — when set, `price` renders struck-through. */
+  salePrice?: number;
   image: string;
   gallery?: string[];
   sizes: string[];
