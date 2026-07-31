@@ -6,9 +6,11 @@ type Props = {
   alt: string;
   className?: string;
   rounded?: boolean;
+  /** Show Replace/Remove controls over an existing image (editor only). */
+  controls?: boolean;
 };
 
-export function ProductImage({ id, alt, className = "" }: Props) {
+export function ProductImage({ id, alt, className = "", controls = true }: Props) {
   const { image, upload, clear } = useProductImage(id);
   const inputRef = useRef<HTMLInputElement>(null);
 
