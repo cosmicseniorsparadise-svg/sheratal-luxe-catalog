@@ -61,30 +61,33 @@ export function ProductImage({ id, alt, className = "", controls = true }: Props
         </div>
       )}
 
-      <div
-        className={`absolute inset-0 flex items-end justify-center gap-2 p-4 transition duration-300 ${
-          image
-            ? "bg-black/0 opacity-0 group-hover/img:bg-black/40 group-hover/img:opacity-100"
-            : "bg-transparent opacity-100"
-        }`}
-      >
-        <button
-          type="button"
-          onClick={openPicker}
-          className="btn-gold btn-gold-hover !py-2 !px-4 !text-[0.62rem]"
+      {(controls || !image) && (
+        <div
+          className={`absolute inset-0 flex items-end justify-center gap-2 p-4 transition duration-300 ${
+            image
+              ? "bg-black/0 opacity-0 group-hover/img:bg-black/40 group-hover/img:opacity-100"
+              : "bg-transparent opacity-100"
+          }`}
         >
-          {image ? "Replace" : "Upload image"}
-        </button>
-        {image && (
           <button
             type="button"
-            onClick={onClear}
-            className="btn-ghost-gold !py-2 !px-4 !text-[0.62rem] !text-white !border-white/70 hover:!bg-white hover:!text-[color:var(--ink)]"
+            onClick={openPicker}
+            className="btn-gold btn-gold-hover !py-2 !px-4 !text-[0.62rem]"
           >
-            Remove
+            {image ? "Replace" : "Upload image"}
           </button>
-        )}
-      </div>
+          {image && (
+            <button
+              type="button"
+              onClick={onClear}
+              className="btn-ghost-gold !py-2 !px-4 !text-[0.62rem] !text-white !border-white/70 hover:!bg-white hover:!text-[color:var(--ink)]"
+            >
+              Remove
+            </button>
+          )}
+        </div>
+      )}
+
 
       <input
         ref={inputRef}
