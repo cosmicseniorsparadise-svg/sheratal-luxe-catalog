@@ -1,10 +1,6 @@
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
 import p3 from "@/assets/p3.jpg";
 import p4 from "@/assets/p4.jpg";
 import p5 from "@/assets/p5.jpg";
-import p6 from "@/assets/p6.jpg";
-import p7 from "@/assets/p7.jpg";
 import p8 from "@/assets/p8.jpg";
 import n1 from "@/assets/new1.jpg.asset.json";
 import n2 from "@/assets/new2.jpg.asset.json";
@@ -20,7 +16,7 @@ export const FACEBOOK = "sheratals";
 export type Product = {
   id: string;
   name: string;
-  category: "Gowns" | "Sarees" | "Lehengas" | "Kurta Sets" | "Co-ords";
+  category: "Lehengas" | "Kurta Sets" | "Co-ords";
   price: number;
   /** Optional discounted price — when set, `price` renders struck-through. */
   salePrice?: number;
@@ -37,39 +33,6 @@ export type Product = {
 const SIZES_FULL = ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"];
 
 export const products: Product[] = [
-  {
-    id: "ivory-zardozi-anarkali",
-    name: "Ivory Zardozi Anarkali",
-    category: "Gowns",
-    price: 48500,
-    image: p1,
-    sizes: SIZES_FULL,
-    description:
-      "A floor-sweeping ivory silk anarkali hand-embellished with delicate zardozi motifs. Softly structured, endlessly flattering.",
-    details: [
-      "Pure silk with cotton lining",
-      "Hand zardozi embroidery",
-      "Concealed side zip",
-      "Includes matching dupatta",
-    ],
-    featured: true,
-  },
-  {
-    id: "noir-gold-velvet-saree",
-    name: "Noir Velvet Saree, Gold Border",
-    category: "Sarees",
-    price: 39800,
-    image: p2,
-    sizes: SIZES_FULL,
-    description:
-      "Deep midnight velvet edged in a hand-woven antique gold border. Drape it low, wear it loud.",
-    details: [
-      "Silk velvet, 5.5m",
-      "Zari border, hand-finished",
-      "Unstitched blouse piece included",
-    ],
-    featured: true,
-  },
   {
     id: "blush-sharara",
     name: "Blush Sequin Sharara",
@@ -113,37 +76,6 @@ export const products: Product[] = [
       "Full canvas construction",
       "Hand zari & pearl work",
       "Custom fitting appointment included",
-    ],
-    featured: true,
-  },
-  {
-    id: "black-column-gown",
-    name: "Black Column Gown",
-    category: "Gowns",
-    price: 42500,
-    image: p6,
-    sizes: SIZES_FULL,
-    description:
-      "A sculpted black georgette gown with a gilded neckline and a whisper of a train. Modern, monumental.",
-    details: [
-      "Georgette over silk crepe",
-      "Hand bead work at neckline",
-      "Concealed back zip",
-    ],
-  },
-  {
-    id: "champagne-sequin-gown",
-    name: "Champagne Sequin Gown",
-    category: "Gowns",
-    price: 56000,
-    image: p7,
-    sizes: SIZES_FULL,
-    description:
-      "Liquid champagne sequins over a bias-cut slip. A room-quieting silhouette.",
-    details: [
-      "Fine sequin on mesh",
-      "Bias-cut silk slip lining",
-      "Adjustable straps",
     ],
     featured: true,
   },
