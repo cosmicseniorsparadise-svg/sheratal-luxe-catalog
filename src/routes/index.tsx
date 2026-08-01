@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/sheratal-logo.JPG.asset.json";
+import badgeAsset from "@/assets/sheratal-badge.png.asset.json";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -112,7 +112,7 @@ function Index() {
               className="relative aspect-square w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[440px] mx-auto flex items-center justify-center overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-10 md:p-12"
             >
               <img
-                src={logoAsset.url}
+                src={badgeAsset.url}
                 alt="Sheratal — Wear Stylish"
                 width={800}
                 height={800}
