@@ -6,6 +6,12 @@ import p5 from "@/assets/p5.jpg";
 import p6 from "@/assets/p6.jpg";
 import p7 from "@/assets/p7.jpg";
 import p8 from "@/assets/p8.jpg";
+import n1 from "@/assets/new1.jpg.asset.json";
+import n2 from "@/assets/new2.jpg.asset.json";
+import n3 from "@/assets/new3.jpg.asset.json";
+import n4 from "@/assets/new4.jpg.asset.json";
+import n5 from "@/assets/new5.jpg.asset.json";
+import n6 from "@/assets/new6.jpg.asset.json";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -157,6 +163,76 @@ export const products: Product[] = [
     ],
   },
 ];
+
+
+products.push(
+  {
+    id: "cocoa-tailored-vest-set",
+    name: "Cocoa Tailored Vest & Trouser Set",
+    category: "Co-ords",
+    price: 12800,
+    image: n1.url,
+    sizes: SIZES_FULL,
+    description:
+      "A sharply tailored cocoa vest with gilded buttons, paired with high-waisted pleated trousers. Quiet power dressing.",
+    details: ["Linen-blend suiting", "Gold-tone buttons", "Vest + trouser set"],
+  },
+  {
+    id: "sage-wrap-shirt-set",
+    name: "Sage Wrap Shirt & Trouser Set",
+    category: "Co-ords",
+    price: 13400,
+    image: n2.url,
+    sizes: SIZES_FULL,
+    description:
+      "An asymmetric wrap shirt with a cinched waist over straight-leg trousers in soft sage. Effortless, elevated.",
+    details: ["Soft tencel blend", "Cinched wrap waist", "Shirt + trouser set"],
+  },
+  {
+    id: "ivory-crystal-bandeau",
+    name: "Ivory Crystal Bandeau Top",
+    category: "Co-ords",
+    price: 6400,
+    image: n3.url,
+    sizes: SIZES_FULL,
+    description:
+      "A structured ivory bandeau with a crystal-set neckline notch. Made for evenings that start late.",
+    details: ["Structured stretch crepe", "Hand-set crystal detail", "Boned bodice"],
+  },
+  {
+    id: "blush-halter-snake-top",
+    name: "Blush Halter Top, Gilded Collar",
+    category: "Co-ords",
+    price: 7200,
+    image: n4.url,
+    sizes: SIZES_FULL,
+    description:
+      "A blush halter with cut-out shoulders and a sculpted gold serpent collar. Sensual, precise.",
+    details: ["Matte jersey", "Gold-tone hardware collar", "Cut-out shoulders"],
+  },
+  {
+    id: "noir-floral-knit-top",
+    name: "Noir Floral-Sleeve Knit Top",
+    category: "Kurta Sets",
+    price: 5800,
+    image: n5.url,
+    sizes: SIZES_FULL,
+    description:
+      "A fine black knit with printed floral chiffon sleeves and a beaded V-neckline. Day into evening.",
+    details: ["Fine-gauge knit body", "Printed chiffon sleeves", "Hand-beaded neckline"],
+  },
+  {
+    id: "cream-polka-tie-blouse",
+    name: "Cream Polka Tie-Neck Blouse",
+    category: "Kurta Sets",
+    price: 4900,
+    image: n6.url,
+    sizes: SIZES_FULL,
+    description:
+      "A cream satin blouse in classic black polka, finished with a rosette tie-neck and blouson cuffs.",
+    details: ["Satin crepe", "Detachable rosette tie", "Blouson sleeve, buttoned cuff"],
+  },
+);
 
 export const categories = Array.from(new Set(products.map((p) => p.category)));
 

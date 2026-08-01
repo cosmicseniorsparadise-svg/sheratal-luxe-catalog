@@ -45,7 +45,7 @@ function ProductDetail() {
       <div className="grid md:grid-cols-2 gap-10 md:gap-16">
         {/* Gallery */}
         <div>
-          <ProductImage id={product.id} alt={product.name} />
+          <ProductImage id={product.id} alt={product.name} src={product.image} />
           <p className="mt-3 text-[0.62rem] tracking-[0.28em] uppercase text-muted-foreground">
             Hover the image to upload or replace this product photo.
           </p>
@@ -121,7 +121,7 @@ function ProductDetail() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <div key={p.id} className="product-card">
-                <ProductImage id={p.id} alt={p.name} />
+                <ProductImage id={p.id} alt={p.name} src={p.image} controls={false} />
                 <Link to="/product/$id" params={{ id: p.id }} className="block mt-4">
                   <div className="flex items-baseline justify-between">
                     <h4 className="font-serif text-lg">{p.name}</h4>

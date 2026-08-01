@@ -4,14 +4,17 @@ import { useProductImage } from "@/lib/product-images";
 type Props = {
   id: string;
   alt: string;
+  /** Default image shown when no custom photo has been uploaded. */
+  src?: string;
   className?: string;
   rounded?: boolean;
   /** Show Replace/Remove controls over an existing image (editor only). */
   controls?: boolean;
 };
 
-export function ProductImage({ id, alt, className = "", controls = true }: Props) {
-  const { image, upload, clear } = useProductImage(id);
+export function ProductImage({ id, alt, src, className = "", controls = true }: Props) {
+  const { image: uploaded, upload, clear } = useProductImage(id);
+  const image = uploaded ?? src ?? null;
   const inputRef = useRef<HTMLInputElement>(null);
 
   const openPicker = (e: MouseEvent) => {
