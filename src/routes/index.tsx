@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/sheratal-logo.JPG.asset.json";
-import { products, formatPrice } from "@/lib/products";
-import { ProductImage } from "@/components/ProductImage";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -25,7 +23,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useReveal();
-  const featured = products.filter((p) => p.featured).slice(0, 3);
 
   return (
     <div>
@@ -99,7 +96,7 @@ function Index() {
 
             <div data-reveal data-delay="4" className="mt-10 flex flex-wrap gap-3">
               <Link to="/shop" className="btn-gold btn-gold-hover">
-                Explore the collection
+                Shop now
               </Link>
               <Link to="/visit" className="btn-ghost-gold">
                 Visit the atelier
@@ -167,59 +164,10 @@ function Index() {
           modern tailoring, each SHERATAL piece is made to be worn — and
           remembered.
         </p>
-      </section>
-
-      {/* FEATURED */}
-      <section className="container-lux pb-24">
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <span className="eyebrow">Editor's Edit</span>
-            <h3 className="mt-2 font-serif text-3xl md:text-4xl">Signature pieces</h3>
-          </div>
-          <Link
-            to="/shop"
-            className="hidden md:inline-flex link-underline text-xs tracking-[0.28em] uppercase"
-          >
-            View all
+        <div data-reveal data-delay="4" className="mt-10">
+          <Link to="/shop" className="btn-gold btn-gold-hover">
+            Shop now
           </Link>
-        </div>
-        <div className="grid gap-8 md:grid-cols-3">
-          {featured.map((p, i) => (
-            <div
-              key={p.id}
-              data-reveal
-              data-delay={String((i % 3) + 1)}
-              className="product-card"
-            >
-              <ProductImage id={p.id} alt={p.name} controls={false} />
-              <Link to="/product/$id" params={{ id: p.id }} className="mt-5 block">
-                <div className="flex items-baseline justify-between gap-4">
-                  <h4 className="font-serif text-xl">{p.name}</h4>
-                  <span className="text-sm text-muted-foreground shrink-0">
-                    {p.salePrice != null ? (
-                      <>
-                        <span className="line-through opacity-60">
-                          {formatPrice(p.price)}
-                        </span>{" "}
-                        <span className="text-[color:var(--gold)]">
-                          {formatPrice(p.salePrice)}
-                        </span>
-                      </>
-                    ) : (
-                      formatPrice(p.price)
-                    )}
-                  </span>
-                </div>
-
-                <span className="mt-1 block text-[0.68rem] tracking-[0.28em] uppercase text-[color:var(--gold)]">
-                  {p.category}
-                </span>
-              </Link>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 text-center md:hidden">
-          <Link to="/shop" className="btn-ghost-gold">View all pieces</Link>
         </div>
       </section>
 
