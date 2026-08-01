@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { products, categories, formatPrice } from "@/lib/products";
+import { products, categories, formatPrice, whatsappUrl } from "@/lib/products";
 import { ProductImage } from "@/components/ProductImage";
 
 export const Route = createFileRoute("/shop")({
@@ -33,9 +33,6 @@ function Shop() {
           Curated silhouettes from our current atelier season. Every piece is
           available in sizes XS through 5XL and ordered directly via WhatsApp.
         </p>
-        <p className="mt-3 text-[0.65rem] tracking-[0.28em] uppercase text-[color:var(--gold)]">
-          Tip · Hover any card to upload your own product image
-        </p>
       </div>
 
       {/* Filters */}
@@ -60,7 +57,7 @@ function Shop() {
         {filtered.map((p) => (
           <div key={p.id} className="product-card">
             <div className="relative">
-              <ProductImage id={p.id} alt={p.name} />
+              <ProductImage id={p.id} alt={p.name} src={p.image} controls={false} />
               <span className="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur px-2.5 py-1 text-[0.6rem] tracking-[0.24em] uppercase text-[color:var(--ink)] pointer-events-none">
                 {p.category}
               </span>
@@ -74,6 +71,16 @@ function Shop() {
                 Sizes {p.sizes[0]} – {p.sizes[p.sizes.length - 1]}
               </p>
             </Link>
+            <a
+              href={whatsappUrl(
+                `Hello SHERATAL, I'd like to buy the ${p.name} (${formatPrice(p.price)}). Is it available?`,
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold btn-gold-hover mt-4 inline-flex"
+            >
+              Buy on WhatsApp
+            </a>
           </div>
         ))}
       </div>
