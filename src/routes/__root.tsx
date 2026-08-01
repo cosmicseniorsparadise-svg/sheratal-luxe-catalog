@@ -65,7 +65,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "SHERATAL is a luxury women's couture house in Dwarka, New Delhi. Hand-crafted lehengas, sarees, gowns and kurta sets in sizes XS to 5XL.",
+          "SHERATAL is a luxury women's couture house in Dwarka, New Delhi. Hand-crafted lehengas, kurta sets and co-ord sets in sizes XS to 5XL.",
       },
       { name: "author", content: "Sheratal" },
       { property: "og:title", content: "SHERATAL — Luxury Couture, Dwarka New Delhi" },
