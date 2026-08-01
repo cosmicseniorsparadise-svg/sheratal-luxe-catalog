@@ -10,7 +10,7 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Browse the SHERATAL collection of lehengas, sarees, gowns, kurta sets and co-ords. Available in sizes XS to 5XL.",
+          "Browse the SHERATAL collection of lehengas, kurta sets and co-ords. Available in sizes XS to 5XL.",
       },
       { property: "og:title", content: "Shop the Collection — SHERATAL" },
       { property: "og:description", content: "Hand-crafted couture, XS to 5XL. Order on WhatsApp." },
