@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import modelPolka from "@/assets/model-polka.png.asset.json";
 import modelCocoa from "@/assets/model-cocoa.png.asset.json";
 import modelSage from "@/assets/model-sage.png.asset.json";
 import { useReveal } from "@/hooks/use-reveal";
@@ -113,8 +114,8 @@ function Index() {
               className="relative w-full max-w-[420px] lg:max-w-[520px] mx-auto overflow-hidden aspect-[3/4] border border-[color:var(--border)]"
             >
               <img
-                src={modelCocoa.url}
-                alt="Sheratal model wearing a cocoa tailored vest and trouser set"
+                src={modelPolka.url}
+                alt="Sheratal model wearing a polka dot blouse and tailored skirt"
                 className="h-full w-full object-cover"
               />
             </div>
