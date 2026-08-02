@@ -104,22 +104,19 @@ function Index() {
             </div>
           </div>
 
-          {/* RIGHT — brand logo */}
+          {/* RIGHT — editorial model image */}
           <div className="lg:col-span-7 relative flex items-center justify-center self-center">
             <div
               data-reveal
               data-delay="2"
-              className="relative aspect-square w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[440px] mx-auto flex items-center justify-center overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-10 md:p-12"
+              className="relative w-full max-w-[420px] lg:max-w-[520px] mx-auto overflow-hidden aspect-[3/4] border border-[color:var(--border)]"
             >
               <img
-                src={badgeAsset.url}
-                alt="Sheratal — Wear Stylish"
-                width={800}
-                height={800}
-                className="max-h-full max-w-full object-contain"
+                src={modelCocoa.url}
+                alt="Sheratal model wearing a cocoa tailored vest and trouser set"
+                className="h-full w-full object-cover"
               />
             </div>
-
 
             <span aria-hidden className="absolute -top-3 -left-3 h-14 w-px bg-[color:var(--gold)]" />
             <span aria-hidden className="absolute -top-3 -left-3 h-px w-14 bg-[color:var(--gold)]" />
