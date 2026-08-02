@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import badgeAsset from "@/assets/sheratal-badge.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -27,8 +28,15 @@ export function SiteHeader() {
       }`}
     >
       <div className="container-lux flex items-center justify-between py-5">
-        <Link to="/" className="flex items-baseline gap-2">
-          <span className="font-serif text-2xl tracking-[0.35em] text-[color:var(--ink)]">
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src={badgeAsset.url}
+            alt="Sheratal"
+            width={96}
+            height={96}
+            className="h-10 w-10 md:h-12 md:w-12 object-contain"
+          />
+          <span className="font-serif text-xl md:text-2xl tracking-[0.35em] text-[color:var(--ink)]">
             SHERATAL
           </span>
         </Link>

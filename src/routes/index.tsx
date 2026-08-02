@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import badgeAsset from "@/assets/sheratal-badge.png.asset.json";
+import modelCocoa from "@/assets/model-cocoa.png.asset.json";
+import modelSage from "@/assets/model-sage.png.asset.json";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -104,22 +105,19 @@ function Index() {
             </div>
           </div>
 
-          {/* RIGHT — brand logo */}
+          {/* RIGHT — editorial model image */}
           <div className="lg:col-span-7 relative flex items-center justify-center self-center">
             <div
               data-reveal
               data-delay="2"
-              className="relative aspect-square w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[440px] mx-auto flex items-center justify-center overflow-hidden border border-[color:var(--border)] bg-[color:var(--muted)]/30 p-10 md:p-12"
+              className="relative w-full max-w-[420px] lg:max-w-[520px] mx-auto overflow-hidden aspect-[3/4] border border-[color:var(--border)]"
             >
               <img
-                src={badgeAsset.url}
-                alt="Sheratal — Wear Stylish"
-                width={800}
-                height={800}
-                className="max-h-full max-w-full object-contain"
+                src={modelCocoa.url}
+                alt="Sheratal model wearing a cocoa tailored vest and trouser set"
+                className="h-full w-full object-cover"
               />
             </div>
-
 
             <span aria-hidden className="absolute -top-3 -left-3 h-14 w-px bg-[color:var(--gold)]" />
             <span aria-hidden className="absolute -top-3 -left-3 h-px w-14 bg-[color:var(--gold)]" />
@@ -170,6 +168,43 @@ function Index() {
           </Link>
         </div>
       </section>
+
+      {/* LOOKBOOK — editorial split */}
+      <section className="pb-24 md:pb-32">
+        <div className="container-lux">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {[
+              { src: modelCocoa.url, label: "Tailored Co-ords", alt: "Model in cocoa tailored vest and trouser set" },
+              { src: modelSage.url, label: "Soft Separates", alt: "Model in sage wrap shirt and trouser set" },
+            ].map((m, i) => (
+              <figure key={m.label} data-reveal data-delay={String(i + 1)} className="group">
+                <div className="overflow-hidden aspect-[3/4] bg-[color:var(--muted)]">
+                  <img
+                    src={m.src}
+                    alt={m.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <figcaption className="mt-4 flex items-center gap-3">
+                  <span className="h-px w-8 bg-[color:var(--gold)]" />
+                  <span className="text-[0.68rem] tracking-[0.3em] uppercase text-[color:var(--ink)]">
+                    {m.label}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div data-reveal data-delay="3" className="mt-12 flex justify-center">
+            <Link to="/shop" className="btn-gold btn-gold-hover">
+              Explore
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* SIZE PROMISE */}
       <section className="bg-[color:var(--ink)] text-white">
