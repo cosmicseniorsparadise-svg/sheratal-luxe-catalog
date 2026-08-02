@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import modelPolka from "@/assets/model-polka.png.asset.json";
 import modelCocoa from "@/assets/model-cocoa.png.asset.json";
 import modelSage from "@/assets/model-sage.png.asset.json";
 import { useReveal } from "@/hooks/use-reveal";
