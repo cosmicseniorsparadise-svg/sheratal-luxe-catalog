@@ -169,6 +169,43 @@ function Index() {
         </div>
       </section>
 
+      {/* LOOKBOOK — editorial split */}
+      <section className="pb-24 md:pb-32">
+        <div className="container-lux">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {[
+              { src: modelCocoa.url, label: "Tailored Co-ords", alt: "Model in cocoa tailored vest and trouser set" },
+              { src: modelSage.url, label: "Soft Separates", alt: "Model in sage wrap shirt and trouser set" },
+            ].map((m, i) => (
+              <figure key={m.label} data-reveal data-delay={String(i + 1)} className="group">
+                <div className="overflow-hidden aspect-[3/4] bg-[color:var(--muted)]">
+                  <img
+                    src={m.src}
+                    alt={m.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <figcaption className="mt-4 flex items-center gap-3">
+                  <span className="h-px w-8 bg-[color:var(--gold)]" />
+                  <span className="text-[0.68rem] tracking-[0.3em] uppercase text-[color:var(--ink)]">
+                    {m.label}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div data-reveal data-delay="3" className="mt-12 flex justify-center">
+            <Link to="/shop" className="btn-gold btn-gold-hover">
+              Explore
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* SIZE PROMISE */}
       <section className="bg-[color:var(--ink)] text-white">
         <div className="container-lux py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
