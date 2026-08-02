@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import badgeAsset from "@/assets/sheratal-badge.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
