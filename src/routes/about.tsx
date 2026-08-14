@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import aboutImg from "@/assets/about.jpg";
+import pageantAsset from "@/assets/pageant-collage.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -42,6 +43,30 @@ function About() {
             height={1100}
             className="w-full h-[60vh] object-cover"
           />
+        </div>
+      </section>
+
+      <section className="container-lux py-20 md:py-24 grid md:grid-cols-2 gap-12 items-center max-w-6xl">
+        <div className="overflow-hidden">
+          <img
+            src={pageantAsset.url}
+            alt="Sheratal Presents Miss & Mrs Delhi NCR Season 4 grand finale at Radisson Blu, Dwarka"
+            loading="lazy"
+            className="w-full object-cover"
+          />
+        </div>
+        <div>
+          <span className="eyebrow">Pageants &amp; Runway</span>
+          <div className="mt-3"><span className="gold-divider" /></div>
+          <p className="mt-6 text-muted-foreground leading-relaxed">
+            Sheratal is an established name in India's pageant and fashion industry,
+            dedicated to celebrating women's empowerment, confidence, and talent across
+            multiple age groups. Alongside our signature pageants, we organise curated
+            fashion shows that spotlight new-age designers, trends, and runway artistry —
+            creating a platform where beauty, style, and self-expression come together.
+            Our flagship event, Sheratal Presents Miss &amp; Mrs Delhi NCR, recently wrapped
+            up its Season 4 with a grand finale held at the Radisson Blu, Dwarka.
+          </p>
         </div>
       </section>
 
