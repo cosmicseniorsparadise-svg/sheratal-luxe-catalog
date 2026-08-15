@@ -70,6 +70,37 @@ function About() {
         </div>
       </section>
 
+      <section className="container-lux py-20 md:py-28 text-center max-w-4xl">
+        <span className="eyebrow">On the Air</span>
+        <div className="mt-3 flex justify-center"><span className="gold-divider" /></div>
+        <h2 className="mt-6 font-serif text-4xl md:text-5xl">In conversation.</h2>
+        <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          The Sheratal story, in the founder's own words — featured on the
+          Sadhna TV podcast.
+        </p>
+        <div className="mt-10 overflow-hidden border border-[color:var(--border)]">
+          <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/GuKnBY5Lpmo?rel=0"
+              title="Sheratal on the Sadhna TV podcast"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+        <a
+          href="https://youtu.be/GuKnBY5Lpmo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost-gold mt-6"
+        >
+          Watch on YouTube
+        </a>
+      </section>
+
       <section className="container-lux py-24 grid md:grid-cols-3 gap-12 max-w-6xl">
         <div>
           <span className="eyebrow">01 — Craft</span>
