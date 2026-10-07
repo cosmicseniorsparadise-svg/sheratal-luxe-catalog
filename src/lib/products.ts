@@ -186,7 +186,7 @@ products.push(
   {
     id: "ivory-crystal-bandeau",
     name: "Ivory Crystal Bandeau Top",
-    category: "Co-ords",
+    category: "Tops",
     price: 6400,
     image: n3.url,
     sizes: SIZES_FULL,
@@ -197,7 +197,7 @@ products.push(
   {
     id: "blush-halter-snake-top",
     name: "Blush Halter Top, Gilded Collar",
-    category: "Co-ords",
+    category: "Tops",
     price: 7200,
     image: n4.url,
     sizes: SIZES_FULL,
@@ -208,7 +208,7 @@ products.push(
   {
     id: "noir-floral-knit-top",
     name: "Noir Floral-Sleeve Knit Top",
-    category: "Kurta Sets",
+    category: "Tops",
     price: 5800,
     image: n5.url,
     sizes: SIZES_FULL,
@@ -219,7 +219,7 @@ products.push(
   {
     id: "cream-polka-tie-blouse",
     name: "Cream Polka Tie-Neck Blouse",
-    category: "Kurta Sets",
+    category: "Tops",
     price: 4900,
     image: n6.url,
     sizes: SIZES_FULL,
