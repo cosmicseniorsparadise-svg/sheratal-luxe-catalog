@@ -65,7 +65,16 @@ function Shop() {
             <Link to="/product/$id" params={{ id: p.id }} className="block mt-5">
               <div className="flex items-baseline justify-between gap-4">
                 <h3 className="font-serif text-xl leading-tight">{p.name}</h3>
-                <span className="text-sm text-muted-foreground shrink-0">{formatPrice(p.price)}</span>
+                <span className="text-sm shrink-0 text-right">
+                  {p.salePrice ? (
+                    <>
+                      <span className="line-through text-muted-foreground/70 mr-2">{formatPrice(p.price)}</span>
+                      <span className="text-[color:var(--gold-deep)] font-medium">{formatPrice(p.salePrice)}</span>
+                    </>
+                  ) : (
+                    <span className="text-muted-foreground">{formatPrice(p.price)}</span>
+                  )}
+                </span>
               </div>
               <p className="mt-1 text-xs text-muted-foreground">
                 Sizes {p.sizes[0]} – {p.sizes[p.sizes.length - 1]}
