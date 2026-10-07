@@ -82,7 +82,7 @@ function Shop() {
             </Link>
             <a
               href={whatsappUrl(
-                `Hello SHERATAL, I'd like to buy the ${p.name} (${formatPrice(p.price)}). Is it available?`,
+                `Hello SHERATAL, I'd like to buy the ${p.name} (${formatPrice(p.salePrice ?? p.price)}). Is it available?`,
               )}
               target="_blank"
               rel="noopener noreferrer"
