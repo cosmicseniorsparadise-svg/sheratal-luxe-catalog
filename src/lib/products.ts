@@ -227,6 +227,28 @@ products.push(
       "A cream satin blouse in classic black polka, finished with a rosette tie-neck and blouson cuffs.",
     details: ["Satin crepe", "Detachable rosette tie", "Blouson sleeve, buttoned cuff"],
   },
+  {
+    id: "wine-polka-wrap-top",
+    name: "Wine Polka Wrap Top",
+    category: "Tops",
+    price: 2500,
+    image: t1.url,
+    sizes: SIZES_FULL,
+    description:
+      "A wine satin wrap top in ivory polka, cinched with twin rosettes at the waist. Pairs beautifully with denim or tailored trousers.",
+    details: ["Satin finish", "Wrap front with rosette detail", "Buttoned cuffs"],
+  },
+  {
+    id: "everyday-zip-top",
+    name: "Everyday Zip-Neck Top",
+    category: "Tops",
+    price: 2500,
+    image: t2.url,
+    sizes: SIZES_FULL,
+    description:
+      "A soft zip-neck long-sleeve top in five easy shades — black, blush, white, wine, and navy. Your everyday essential.",
+    details: ["Soft stretch jersey", "Zip neckline", "Available in 5 colours"],
+  },
 );
 
 export const categories = Array.from(new Set(products.map((p) => p.category)));
