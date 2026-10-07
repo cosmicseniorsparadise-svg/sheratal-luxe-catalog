@@ -13,6 +13,8 @@ import n3 from "@/assets/new3.jpg.asset.json";
 import n4 from "@/assets/new4.jpg.asset.json";
 import n5 from "@/assets/new5.jpg.asset.json";
 import n6 from "@/assets/new6.jpg.asset.json";
+import t1 from "@/assets/top1.jpg.asset.json";
+import t2 from "@/assets/top2.jpg.asset.json";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -21,7 +23,7 @@ export const FACEBOOK = "sheratals";
 export type Product = {
   id: string;
   name: string;
-  category: "Lehengas" | "Kurta Sets" | "Co-ords";
+  category: "Lehengas" | "Kurta Sets" | "Co-ords" | "Tops";
   price: number;
   /** Optional discounted price — when set, `price` renders struck-through. */
   salePrice?: number;
@@ -184,7 +186,7 @@ products.push(
   {
     id: "ivory-crystal-bandeau",
     name: "Ivory Crystal Bandeau Top",
-    category: "Co-ords",
+    category: "Tops",
     price: 6400,
     image: n3.url,
     sizes: SIZES_FULL,
@@ -195,7 +197,7 @@ products.push(
   {
     id: "blush-halter-snake-top",
     name: "Blush Halter Top, Gilded Collar",
-    category: "Co-ords",
+    category: "Tops",
     price: 7200,
     image: n4.url,
     sizes: SIZES_FULL,
@@ -206,7 +208,7 @@ products.push(
   {
     id: "noir-floral-knit-top",
     name: "Noir Floral-Sleeve Knit Top",
-    category: "Kurta Sets",
+    category: "Tops",
     price: 5800,
     image: n5.url,
     sizes: SIZES_FULL,
@@ -217,13 +219,35 @@ products.push(
   {
     id: "cream-polka-tie-blouse",
     name: "Cream Polka Tie-Neck Blouse",
-    category: "Kurta Sets",
+    category: "Tops",
     price: 4900,
     image: n6.url,
     sizes: SIZES_FULL,
     description:
       "A cream satin blouse in classic black polka, finished with a rosette tie-neck and blouson cuffs.",
     details: ["Satin crepe", "Detachable rosette tie", "Blouson sleeve, buttoned cuff"],
+  },
+  {
+    id: "wine-polka-wrap-top",
+    name: "Wine Polka Wrap Top",
+    category: "Tops",
+    price: 2500,
+    image: t1.url,
+    sizes: SIZES_FULL,
+    description:
+      "A wine satin wrap top in ivory polka, cinched with twin rosettes at the waist. Pairs beautifully with denim or tailored trousers.",
+    details: ["Satin finish", "Wrap front with rosette detail", "Buttoned cuffs"],
+  },
+  {
+    id: "everyday-zip-top",
+    name: "Everyday Zip-Neck Top",
+    category: "Tops",
+    price: 2500,
+    image: t2.url,
+    sizes: SIZES_FULL,
+    description:
+      "A soft zip-neck long-sleeve top in five easy shades — black, blush, white, wine, and navy. Your everyday essential.",
+    details: ["Soft stretch jersey", "Zip neckline", "Available in 5 colours"],
   },
 );
 
