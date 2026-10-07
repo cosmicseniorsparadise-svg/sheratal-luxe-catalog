@@ -13,6 +13,8 @@ import n3 from "@/assets/new3.jpg.asset.json";
 import n4 from "@/assets/new4.jpg.asset.json";
 import n5 from "@/assets/new5.jpg.asset.json";
 import n6 from "@/assets/new6.jpg.asset.json";
+import t1 from "@/assets/top1.jpg.asset.json";
+import t2 from "@/assets/top2.jpg.asset.json";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -21,7 +23,7 @@ export const FACEBOOK = "sheratals";
 export type Product = {
   id: string;
   name: string;
-  category: "Lehengas" | "Kurta Sets" | "Co-ords";
+  category: "Lehengas" | "Kurta Sets" | "Co-ords" | "Tops";
   price: number;
   /** Optional discounted price — when set, `price` renders struck-through. */
   salePrice?: number;
