@@ -55,7 +55,17 @@ function ProductDetail() {
         <div className="md:pt-6">
           <span className="eyebrow">{product.category}</span>
           <h1 className="mt-3 font-serif text-4xl md:text-5xl leading-tight">{product.name}</h1>
-          <p className="mt-4 text-lg text-muted-foreground">{formatPrice(product.price)}</p>
+          <p className="mt-4 text-lg">
+            {product.salePrice ? (
+              <>
+                <span className="line-through text-muted-foreground/70 mr-3">{formatPrice(product.price)}</span>
+                <span className="text-[color:var(--gold-deep)] font-medium">{formatPrice(product.salePrice)}</span>
+                <span className="ml-3 text-xs tracking-[0.2em] uppercase text-[color:var(--gold-deep)]">50% off</span>
+              </>
+            ) : (
+              <span className="text-muted-foreground">{formatPrice(product.price)}</span>
+            )}
+          </p>
           <span className="gold-divider mt-6 !w-16" />
           <p className="mt-6 text-[15px] leading-relaxed text-foreground/80">{product.description}</p>
 

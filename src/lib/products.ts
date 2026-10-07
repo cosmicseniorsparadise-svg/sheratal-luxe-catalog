@@ -1,7 +1,12 @@
 import p3 from "@/assets/p3.jpg";
 import p4 from "@/assets/p4.jpg";
-import p5 from "@/assets/p5.jpg";
 import p8 from "@/assets/p8.jpg";
+import l1 from "@/assets/lehenga1.jpg.asset.json";
+import l2 from "@/assets/lehenga2.jpg.asset.json";
+import l3 from "@/assets/lehenga3.jpg.asset.json";
+import l4 from "@/assets/lehenga4.jpg.asset.json";
+import l5 from "@/assets/lehenga5.jpg.asset.json";
+import l6 from "@/assets/lehenga6.jpg.asset.json";
 import n1 from "@/assets/new1.jpg.asset.json";
 import n2 from "@/assets/new2.jpg.asset.json";
 import n3 from "@/assets/new3.jpg.asset.json";
@@ -64,20 +69,76 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "ivory-bridal-lehenga",
-    name: "Ivory Bridal Lehenga",
+    id: "golden-drape-lehenga",
+    name: "Golden Drape Lehenga Set",
     category: "Lehengas",
-    price: 128000,
-    image: p5,
+    price: 7000,
+    salePrice: 3500,
+    image: l1.url,
     sizes: SIZES_FULL,
     description:
-      "The house signature — an ivory silk lehenga layered in heavy gold zari. Made for the day you remember.",
-    details: [
-      "Full canvas construction",
-      "Hand zari & pearl work",
-      "Custom fitting appointment included",
-    ],
-    featured: true,
+      "A molten-gold draped skirt with a sculpted shimmer blouse — made for sangeet nights and spotlight moments.",
+    details: ["Shimmer tissue fabric", "Draped knot-front skirt", "Structured blouse included"],
+  },
+  {
+    id: "noir-zardozi-lehenga",
+    name: "Noir Zardozi Lehenga Set",
+    category: "Lehengas",
+    price: 7000,
+    salePrice: 3500,
+    image: l2.url,
+    sizes: SIZES_FULL,
+    description:
+      "Hand-embroidered black zardozi choli over a champagne gold draped skirt. Festive, regal, unforgettable.",
+    details: ["Hand zardozi embroidery", "Champagne silk-blend skirt", "Tassel-finished choli"],
+  },
+  {
+    id: "mustard-rust-lehenga",
+    name: "Mustard & Rust Lehenga Set",
+    category: "Lehengas",
+    price: 7000,
+    salePrice: 3500,
+    image: l3.url,
+    sizes: SIZES_FULL,
+    description:
+      "A hand-woven mustard choli paired with a flowing rust skirt — heritage craft with a modern silhouette.",
+    details: ["Textured weave choli", "Flowing rust skirt", "Day-to-evening festive wear"],
+  },
+  {
+    id: "champagne-zardozi-lehenga",
+    name: "Champagne Zardozi Lehenga Set",
+    category: "Lehengas",
+    price: 7000,
+    salePrice: 3500,
+    image: l4.url,
+    sizes: SIZES_FULL,
+    description:
+      "Black floral zardozi meets a liquid-champagne draped skirt. Evening glamour, distilled.",
+    details: ["Floral zardozi choli", "Knot-draped skirt", "Statement earrings recommended"],
+  },
+  {
+    id: "magenta-mustard-lehenga",
+    name: "Magenta & Mustard Lehenga Set",
+    category: "Lehengas",
+    price: 7000,
+    salePrice: 3500,
+    image: l5.url,
+    sizes: SIZES_FULL,
+    description:
+      "A vivid magenta skirt with a sunshine mustard choli — the colour story every celebration deserves.",
+    details: ["Vibrant silk-blend skirt", "Gold-trim choli", "Perfect for haldi & mehendi"],
+  },
+  {
+    id: "marigold-festive-lehenga",
+    name: "Marigold Festive Lehenga Set",
+    category: "Lehengas",
+    price: 7000,
+    salePrice: 3500,
+    image: l6.url,
+    sizes: SIZES_FULL,
+    description:
+      "A marigold skirt topped with a riot of festive embroidery — joy, tailored.",
+    details: ["Multicolour embroidered choli", "Marigold silk skirt", "Lightweight festive wear"],
   },
   {
     id: "ivory-embroidered-suit",
