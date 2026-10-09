@@ -1,6 +1,3 @@
-import p3 from "@/assets/p3.jpg";
-import p4 from "@/assets/p4.jpg";
-import p8 from "@/assets/p8.jpg";
 import l1 from "@/assets/lehenga1.jpg.asset.json";
 import l2 from "@/assets/lehenga2.jpg.asset.json";
 import l3 from "@/assets/lehenga3.jpg.asset.json";
@@ -23,7 +20,7 @@ export const FACEBOOK = "sheratals";
 export type Product = {
   id: string;
   name: string;
-  category: "Lehengas" | "Kurta Sets" | "Co-ords" | "Tops";
+  category: "Western Dresses" | "Ethnic Wear" | "Office Wear";
   price: number;
   /** Optional discounted price — when set, `price` renders struck-through. */
   salePrice?: number;
@@ -41,39 +38,9 @@ const SIZES_FULL = ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"];
 
 export const products: Product[] = [
   {
-    id: "blush-sharara",
-    name: "Blush Sequin Sharara",
-    category: "Co-ords",
-    price: 34200,
-    image: p3,
-    sizes: SIZES_FULL,
-    description:
-      "Petal-soft chiffon in blush pink, dusted with tonal gold sequins. Weightless movement, quiet drama.",
-    details: [
-      "Chiffon over silk lining",
-      "Tonal sequin & bead work",
-      "Includes dupatta and choli",
-    ],
-  },
-  {
-    id: "emerald-silk-kurta",
-    name: "Emerald Silk Kurta Set",
-    category: "Kurta Sets",
-    price: 27600,
-    image: p4,
-    sizes: SIZES_FULL,
-    description:
-      "Rich emerald raw silk with delicate gold thread work — an heirloom-grade everyday indulgence.",
-    details: [
-      "Raw silk, breathable lining",
-      "Gold aari thread work",
-      "Straight pant included",
-    ],
-  },
-  {
     id: "golden-drape-lehenga",
     name: "Golden Drape Lehenga Set",
-    category: "Lehengas",
+    category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
     image: l1.url,
@@ -85,7 +52,7 @@ export const products: Product[] = [
   {
     id: "noir-zardozi-lehenga",
     name: "Noir Zardozi Lehenga Set",
-    category: "Lehengas",
+    category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
     image: l2.url,
@@ -97,7 +64,7 @@ export const products: Product[] = [
   {
     id: "mustard-rust-lehenga",
     name: "Mustard & Rust Lehenga Set",
-    category: "Lehengas",
+    category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
     image: l3.url,
@@ -109,7 +76,7 @@ export const products: Product[] = [
   {
     id: "champagne-zardozi-lehenga",
     name: "Champagne Zardozi Lehenga Set",
-    category: "Lehengas",
+    category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
     image: l4.url,
@@ -121,7 +88,7 @@ export const products: Product[] = [
   {
     id: "magenta-mustard-lehenga",
     name: "Magenta & Mustard Lehenga Set",
-    category: "Lehengas",
+    category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
     image: l5.url,
@@ -133,7 +100,7 @@ export const products: Product[] = [
   {
     id: "marigold-festive-lehenga",
     name: "Marigold Festive Lehenga Set",
-    category: "Lehengas",
+    category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
     image: l6.url,
@@ -142,21 +109,6 @@ export const products: Product[] = [
       "A marigold skirt topped with a riot of festive embroidery — joy, tailored.",
     details: ["Multicolour embroidered choli", "Marigold silk skirt", "Lightweight festive wear"],
   },
-  {
-    id: "ivory-embroidered-suit",
-    name: "Ivory Embroidered Tuxedo",
-    category: "Co-ords",
-    price: 62400,
-    image: p8,
-    sizes: SIZES_FULL,
-    description:
-      "A tailored ivory tuxedo set embroidered in antique gold — the modern bride's rebellion.",
-    details: [
-      "Wool-blend crepe",
-      "Hand embroidered lapel & cuffs",
-      "Includes tailored trouser",
-    ],
-  },
 ];
 
 
@@ -164,7 +116,7 @@ products.push(
   {
     id: "cocoa-tailored-vest-set",
     name: "Cocoa Tailored Vest & Trouser Set",
-    category: "Co-ords",
+    category: "Western Dresses",
     price: 12800,
     image: n1.url,
     sizes: SIZES_FULL,
@@ -175,7 +127,7 @@ products.push(
   {
     id: "sage-wrap-shirt-set",
     name: "Sage Wrap Shirt & Trouser Set",
-    category: "Co-ords",
+    category: "Western Dresses",
     price: 13400,
     image: n2.url,
     sizes: SIZES_FULL,
@@ -186,7 +138,7 @@ products.push(
   {
     id: "ivory-crystal-bandeau",
     name: "Ivory Crystal Bandeau Top",
-    category: "Tops",
+    category: "Western Dresses",
     price: 6400,
     image: n3.url,
     sizes: SIZES_FULL,
@@ -197,7 +149,7 @@ products.push(
   {
     id: "blush-halter-snake-top",
     name: "Blush Halter Top, Gilded Collar",
-    category: "Tops",
+    category: "Western Dresses",
     price: 7200,
     image: n4.url,
     sizes: SIZES_FULL,
@@ -208,7 +160,7 @@ products.push(
   {
     id: "noir-floral-knit-top",
     name: "Noir Floral-Sleeve Knit Top",
-    category: "Tops",
+    category: "Western Dresses",
     price: 5800,
     image: n5.url,
     sizes: SIZES_FULL,
@@ -219,7 +171,7 @@ products.push(
   {
     id: "cream-polka-tie-blouse",
     name: "Cream Polka Tie-Neck Blouse",
-    category: "Tops",
+    category: "Western Dresses",
     price: 4900,
     image: n6.url,
     sizes: SIZES_FULL,
@@ -230,7 +182,7 @@ products.push(
   {
     id: "wine-polka-wrap-top",
     name: "Wine Polka Wrap Top",
-    category: "Tops",
+    category: "Western Dresses",
     price: 2500,
     image: t1.url,
     sizes: SIZES_FULL,
@@ -241,7 +193,7 @@ products.push(
   {
     id: "everyday-zip-top",
     name: "Everyday Zip-Neck Top",
-    category: "Tops",
+    category: "Western Dresses",
     price: 2500,
     image: t2.url,
     sizes: SIZES_FULL,
