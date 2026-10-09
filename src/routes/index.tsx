@@ -74,12 +74,12 @@ function Index() {
             <p
               data-reveal
               data-delay="2"
-              className="mt-8 font-serif italic text-2xl md:text-[1.75rem] leading-snug text-[color:var(--ink)]/85 max-w-md"
+              className="mt-7 font-serif italic text-2xl md:text-[1.9rem] leading-snug text-[color:var(--ink)] max-w-md"
             >
-              She doesn't follow the light — she walks in wearing it.
+              Where Elegance Meets Confidence.
             </p>
 
-            <div data-reveal data-delay="3" className="mt-8 flex items-center gap-4">
+            <div data-reveal data-delay="3" className="mt-7 flex items-center gap-4">
               <span className="gold-divider !w-16" />
               <span className="text-[0.66rem] tracking-[0.34em] uppercase text-muted-foreground">
                 Atelier · Dwarka, New Delhi
@@ -91,12 +91,24 @@ function Index() {
               data-delay="3"
               className="mt-6 max-w-md text-[15px] leading-relaxed text-muted-foreground"
             >
-              A house of hand-crafted couture — drawn, draped and tailored across
-              every silhouette from XS to 5XL. Nothing off the rack. Everything
-              made to be remembered.
+              SHERATAL celebrates every woman, every curve, and every occasion with
+              fashion that reflects her individuality. From chic co-ord sets and
+              sophisticated formals to glamorous partywear and timeless ethnic
+              styles, discover fashion designed to make you feel confident,
+              beautiful, and unforgettable.
             </p>
 
-            <div data-reveal data-delay="4" className="mt-10 flex flex-wrap gap-3">
+            <div data-reveal data-delay="4" className="mt-8 max-w-md">
+              <span className="gold-divider !w-12" />
+              <p className="mt-4 font-serif text-xl md:text-[1.6rem] leading-snug text-[color:var(--ink)]">
+                Every Woman Has a Style.
+                <span className="block italic text-[color:var(--gold)]">
+                  Every Woman Deserves to Shine.
+                </span>
+              </p>
+            </div>
+
+            <div data-reveal data-delay="5" className="mt-10 flex flex-wrap gap-3">
               <Link to="/shop" className="btn-gold btn-gold-hover">
                 Shop now
               </Link>
@@ -104,6 +116,7 @@ function Index() {
                 Visit the atelier
               </Link>
             </div>
+
           </div>
 
           {/* RIGHT — editorial model image */}
