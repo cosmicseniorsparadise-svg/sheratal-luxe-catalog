@@ -1,6 +1,3 @@
-import p3 from "@/assets/p3.jpg";
-import p4 from "@/assets/p4.jpg";
-import p8 from "@/assets/p8.jpg";
 import l1 from "@/assets/lehenga1.jpg.asset.json";
 import l2 from "@/assets/lehenga2.jpg.asset.json";
 import l3 from "@/assets/lehenga3.jpg.asset.json";
