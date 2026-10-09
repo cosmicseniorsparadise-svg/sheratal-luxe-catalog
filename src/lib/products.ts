@@ -20,7 +20,7 @@ export const FACEBOOK = "sheratals";
 export type Product = {
   id: string;
   name: string;
-  category: "Ethnic Wear" | "Kurta Sets" | "Co-ords" | "Tops";
+  category: "Western Dresses" | "Ethnic Wear" | "Office Wear";
   price: number;
   /** Optional discounted price — when set, `price` renders struck-through. */
   salePrice?: number;
@@ -108,21 +108,6 @@ export const products: Product[] = [
     description:
       "A marigold skirt topped with a riot of festive embroidery — joy, tailored.",
     details: ["Multicolour embroidered choli", "Marigold silk skirt", "Lightweight festive wear"],
-  },
-  {
-    id: "ivory-embroidered-suit",
-    name: "Ivory Embroidered Tuxedo",
-    category: "Western Dresses",
-    price: 62400,
-    image: p8,
-    sizes: SIZES_FULL,
-    description:
-      "A tailored ivory tuxedo set embroidered in antique gold — the modern bride's rebellion.",
-    details: [
-      "Wool-blend crepe",
-      "Hand embroidered lapel & cuffs",
-      "Includes tailored trouser",
-    ],
   },
 ];
 
