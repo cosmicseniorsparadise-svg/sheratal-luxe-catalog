@@ -18,6 +18,7 @@ import dr2 from "@/assets/dress2.jpg.asset.json";
 import dr3 from "@/assets/dress3.jpg.asset.json";
 import o1 from "@/assets/office1.png.asset.json";
 import o2 from "@/assets/office2.png.asset.json";
+import { assetUrl } from "@/lib/asset-url";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -49,7 +50,7 @@ export const products: Product[] = [
     category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
-    image: l1.url,
+    image: assetUrl(l1),
     sizes: SIZES_FULL,
     description:
       "A molten-gold draped skirt with a sculpted shimmer blouse — made for sangeet nights and spotlight moments.",
@@ -61,7 +62,7 @@ export const products: Product[] = [
     category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
-    image: l2.url,
+    image: assetUrl(l2),
     sizes: SIZES_FULL,
     description:
       "Hand-embroidered black zardozi choli over a champagne gold draped skirt. Festive, regal, unforgettable.",
@@ -73,7 +74,7 @@ export const products: Product[] = [
     category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
-    image: l3.url,
+    image: assetUrl(l3),
     sizes: SIZES_FULL,
     description:
       "A hand-woven mustard choli paired with a flowing rust skirt — heritage craft with a modern silhouette.",
@@ -85,7 +86,7 @@ export const products: Product[] = [
     category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
-    image: l4.url,
+    image: assetUrl(l4),
     sizes: SIZES_FULL,
     description:
       "Black floral zardozi meets a liquid-champagne draped skirt. Evening glamour, distilled.",
@@ -97,7 +98,7 @@ export const products: Product[] = [
     category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
-    image: l5.url,
+    image: assetUrl(l5),
     sizes: SIZES_FULL,
     description:
       "A vivid magenta skirt with a sunshine mustard choli — the colour story every celebration deserves.",
@@ -109,7 +110,7 @@ export const products: Product[] = [
     category: "Ethnic Wear",
     price: 7000,
     salePrice: 3500,
-    image: l6.url,
+    image: assetUrl(l6),
     sizes: SIZES_FULL,
     description:
       "A marigold skirt topped with a riot of festive embroidery — joy, tailored.",
@@ -124,7 +125,7 @@ products.push(
     name: "Cocoa Tailored Vest & Trouser Set",
     category: "Western Dresses",
     price: 12800,
-    image: n1.url,
+    image: assetUrl(n1),
     sizes: SIZES_FULL,
     description:
       "A sharply tailored cocoa vest with gilded buttons, paired with high-waisted pleated trousers. Quiet power dressing.",
@@ -135,7 +136,7 @@ products.push(
     name: "Sage Wrap Shirt & Trouser Set",
     category: "Western Dresses",
     price: 13400,
-    image: n2.url,
+    image: assetUrl(n2),
     sizes: SIZES_FULL,
     description:
       "An asymmetric wrap shirt with a cinched waist over straight-leg trousers in soft sage. Effortless, elevated.",
@@ -146,7 +147,7 @@ products.push(
     name: "Ivory Crystal Bandeau Top",
     category: "Western Dresses",
     price: 6400,
-    image: n3.url,
+    image: assetUrl(n3),
     sizes: SIZES_FULL,
     description:
       "A structured ivory bandeau with a crystal-set neckline notch. Made for evenings that start late.",
@@ -157,7 +158,7 @@ products.push(
     name: "Blush Halter Top, Gilded Collar",
     category: "Western Dresses",
     price: 7200,
-    image: n4.url,
+    image: assetUrl(n4),
     sizes: SIZES_FULL,
     description:
       "A blush halter with cut-out shoulders and a sculpted gold serpent collar. Sensual, precise.",
@@ -168,7 +169,7 @@ products.push(
     name: "Noir Floral-Sleeve Knit Top",
     category: "Western Dresses",
     price: 5800,
-    image: n5.url,
+    image: assetUrl(n5),
     sizes: SIZES_FULL,
     description:
       "A fine black knit with printed floral chiffon sleeves and a beaded V-neckline. Day into evening.",
@@ -179,7 +180,7 @@ products.push(
     name: "Cream Polka Tie-Neck Blouse",
     category: "Western Dresses",
     price: 4900,
-    image: n6.url,
+    image: assetUrl(n6),
     sizes: SIZES_FULL,
     description:
       "A cream satin blouse in classic black polka, finished with a rosette tie-neck and blouson cuffs.",
@@ -190,7 +191,7 @@ products.push(
     name: "Wine Polka Wrap Top",
     category: "Western Dresses",
     price: 2500,
-    image: t1.url,
+    image: assetUrl(t1),
     sizes: SIZES_FULL,
     description:
       "A wine satin wrap top in ivory polka, cinched with twin rosettes at the waist. Pairs beautifully with denim or tailored trousers.",
@@ -201,7 +202,7 @@ products.push(
     name: "Everyday Zip-Neck Top",
     category: "Western Dresses",
     price: 2500,
-    image: t2.url,
+    image: assetUrl(t2),
     sizes: SIZES_FULL,
     description:
       "A soft zip-neck long-sleeve top in five easy shades — black, blush, white, wine, and navy. Your everyday essential.",
@@ -212,7 +213,7 @@ products.push(
     name: "Denim Co-Ord Set",
     category: "Western Dresses",
     price: 5000,
-    image: d1.url,
+    image: assetUrl(d1),
     sizes: SIZES_FULL,
     description:
       "A pinstripe denim shirt and straight-leg trouser set, cinched at the waist with a leather-tab tie. Easy, elevated, endlessly wearable.",
@@ -223,7 +224,7 @@ products.push(
     name: "Noir Floral Pleated Midi Dress",
     category: "Western Dresses",
     price: 3500,
-    image: dr1.url,
+    image: assetUrl(dr1),
     sizes: SIZES_FULL,
     description:
       "A black accordion-pleated midi softened by a cream and tan floral motif. Moves beautifully, never tries too hard.",
@@ -234,7 +235,7 @@ products.push(
     name: "Ivory Ink-Splatter Pleated Midi Dress",
     category: "Western Dresses",
     price: 3500,
-    image: dr2.url,
+    image: assetUrl(dr2),
     sizes: SIZES_FULL,
     description:
       "An ivory-beige pleated midi with an artistic black ink-splatter wash across the bodice and hem. Understated, with a signature.",
@@ -245,7 +246,7 @@ products.push(
     name: "Crimson Panel Pleated Midi Dress",
     category: "Western Dresses",
     price: 3500,
-    image: dr3.url,
+    image: assetUrl(dr3),
     sizes: SIZES_FULL,
     description:
       "A bold crimson center panel flanked by black pleats scattered with golden-yellow florals. Colour, cut, and quiet drama.",
@@ -256,7 +257,7 @@ products.push(
     name: "Mocha Tailored Vest Set",
     category: "Office Wear",
     price: 7000,
-    image: o1.url,
+    image: assetUrl(o1),
     sizes: SIZES_FULL,
     description:
       "A mocha-brown sleeveless waistcoat with gold dome buttons and a pointed hem, cut to sit over crisp pleated trousers. Boardroom to dinner without a change.",
@@ -267,7 +268,7 @@ products.push(
     name: "Stone Wrap Blouse Set",
     category: "Office Wear",
     price: 7000,
-    image: o2.url,
+    image: assetUrl(o2),
     sizes: SIZES_FULL,
     description:
       "A soft stone-grey wrap blouse with a turn-down collar and shirred waist, paired with fluid straight-leg trousers. Relaxed tailoring that still reads sharp.",

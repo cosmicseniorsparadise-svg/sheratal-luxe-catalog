@@ -19,6 +19,12 @@ export const Route = createFileRoute("/product/$id")({
         { title: `${p.name} — SHERATAL Couture` },
         { name: "description", content: p.description },
         { property: "og:title", content: `${p.name} — SHERATAL` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        ...(p.image.startsWith("https://") ? [
+          { property: "og:image", content: p.image },
+          { name: "twitter:image", content: p.image },
+        ] : []),
         { property: "og:description", content: p.description },
       ],
     };

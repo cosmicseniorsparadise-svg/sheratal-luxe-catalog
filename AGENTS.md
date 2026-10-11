@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Resolve Lovable asset pointers through `src/lib/asset-url.ts` before rendering; their relative hosting-only paths do not exist on external deployments such as Vercel.

@@ -11,6 +11,8 @@ export const Route = createFileRoute("/visit")({
           "Visit the SHERATAL couture showroom in Sector 7, Dwarka, New Delhi. Open daily 10 AM – 8 PM. Private appointments available on WhatsApp.",
       },
       { property: "og:title", content: "Visit SHERATAL — Sector 7 Dwarka, New Delhi" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:description", content: "Sector 7, Dwarka. Open 10 AM – 8 PM daily." },
     ],
   }),
