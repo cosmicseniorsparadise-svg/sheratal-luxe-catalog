@@ -13,6 +13,8 @@ export const Route = createFileRoute("/shop")({
           "Browse the SHERATAL collection of lehengas, kurta sets and co-ords. Available in sizes XS to 5XL.",
       },
       { property: "og:title", content: "Shop the Collection — SHERATAL" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:description", content: "Hand-crafted couture, XS to 5XL. Order on WhatsApp." },
     ],
   }),

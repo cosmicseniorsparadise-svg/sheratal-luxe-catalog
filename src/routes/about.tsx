@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import aboutImg from "@/assets/about.jpg";
 import pageantAsset from "@/assets/pageant-collage.png.asset.json";
+import { assetUrl } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -12,6 +13,8 @@ export const Route = createFileRoute("/about")({
           "SHERATAL is a luxury couture house built on craftsmanship, inclusivity and body positivity. Read our story from the Dwarka atelier.",
       },
       { property: "og:title", content: "The House of Sheratal — Our Story" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:description", content: "Craftsmanship, inclusivity, body positivity — the SHERATAL story." },
     ],
   }),
@@ -49,7 +52,7 @@ function About() {
       <section className="container-lux py-20 md:py-24 grid md:grid-cols-2 gap-12 items-center max-w-6xl">
         <div className="overflow-hidden">
           <img
-            src={pageantAsset.url}
+            src={assetUrl(pageantAsset)}
             alt="Sheratal Presents Miss & Mrs Delhi NCR Season 4 grand finale at Radisson Blu, Dwarka"
             loading="lazy"
             className="w-full object-cover"

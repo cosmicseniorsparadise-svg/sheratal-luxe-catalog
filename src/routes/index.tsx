@@ -3,6 +3,7 @@ import modelPolka from "@/assets/model-polka.png.asset.json";
 import modelCocoa from "@/assets/model-cocoa.png.asset.json";
 import modelSage from "@/assets/model-sage.png.asset.json";
 import { useReveal } from "@/hooks/use-reveal";
+import { assetUrl } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,6 +15,10 @@ export const Route = createFileRoute("/")({
           "Hand-crafted lehengas, kurta sets and co-ord sets in sizes XS to 5XL. Discover the SHERATAL couture collection.",
       },
       { property: "og:title", content: "SHERATAL — Luxury Couture Atelier" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: assetUrl(modelPolka) },
+      { name: "twitter:image", content: assetUrl(modelPolka) },
       {
         property: "og:description",
         content: "Editorial couture from the SHERATAL atelier in Dwarka, New Delhi.",
@@ -127,7 +132,7 @@ function Index() {
               className="relative w-full max-w-[420px] lg:max-w-[520px] mx-auto overflow-hidden aspect-[3/4] border border-[color:var(--border)]"
             >
               <img
-                src={modelPolka.url}
+                src={assetUrl(modelPolka)}
                 alt="Sheratal model wearing a polka dot blouse and tailored skirt"
                 className="h-full w-full object-cover"
               />
@@ -188,8 +193,8 @@ function Index() {
         <div className="container-lux">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {[
-              { src: modelCocoa.url, label: "Tailored Co-ords", alt: "Model in cocoa tailored vest and trouser set" },
-              { src: modelSage.url, label: "Soft Separates", alt: "Model in sage wrap shirt and trouser set" },
+              { src: assetUrl(modelCocoa), label: "Tailored Co-ords", alt: "Model in cocoa tailored vest and trouser set" },
+              { src: assetUrl(modelSage), label: "Soft Separates", alt: "Model in sage wrap shirt and trouser set" },
             ].map((m, i) => (
               <figure key={m.label} data-reveal data-delay={String(i + 1)} className="group">
                 <div className="overflow-hidden aspect-[3/4] bg-[color:var(--muted)]">
