@@ -16,6 +16,8 @@ import d1 from "@/assets/denim1.jpg.asset.json";
 import dr1 from "@/assets/dress1.jpg.asset.json";
 import dr2 from "@/assets/dress2.jpg.asset.json";
 import dr3 from "@/assets/dress3.jpg.asset.json";
+import o1 from "@/assets/office1.png.asset.json";
+import o2 from "@/assets/office2.png.asset.json";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -248,6 +250,28 @@ products.push(
     description:
       "A bold crimson center panel flanked by black pleats scattered with golden-yellow florals. Colour, cut, and quiet drama.",
     details: ["Asymmetrical centre panel", "Black accordion pleats", "Golden-yellow floral graphics"],
+  },
+  {
+    id: "mocha-tailored-vest-set",
+    name: "Mocha Tailored Vest Set",
+    category: "Office Wear",
+    price: 7000,
+    image: o1.url,
+    sizes: SIZES_FULL,
+    description:
+      "A mocha-brown sleeveless waistcoat with gold dome buttons and a pointed hem, cut to sit over crisp pleated trousers. Boardroom to dinner without a change.",
+    details: ["Structured matte suiting fabric", "Three gold dome-button front", "Pleated straight-leg trousers"],
+  },
+  {
+    id: "stone-wrap-blouse-set",
+    name: "Stone Wrap Blouse Set",
+    category: "Office Wear",
+    price: 7000,
+    image: o2.url,
+    sizes: SIZES_FULL,
+    description:
+      "A soft stone-grey wrap blouse with a turn-down collar and shirred waist, paired with fluid straight-leg trousers. Relaxed tailoring that still reads sharp.",
+    details: ["Drapey fluid crepe", "Crossover wrap front with button detail", "Long sleeves with button cuffs"],
   },
 );
 
