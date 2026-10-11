@@ -13,6 +13,9 @@ import n6 from "@/assets/new6.jpg.asset.json";
 import t1 from "@/assets/top1.jpg.asset.json";
 import t2 from "@/assets/top2.jpg.asset.json";
 import d1 from "@/assets/denim1.jpg.asset.json";
+import dr1 from "@/assets/dress1.jpg.asset.json";
+import dr2 from "@/assets/dress2.jpg.asset.json";
+import dr3 from "@/assets/dress3.jpg.asset.json";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -212,6 +215,39 @@ products.push(
     description:
       "A pinstripe denim shirt and straight-leg trouser set, cinched at the waist with a leather-tab tie. Easy, elevated, endlessly wearable.",
     details: ["Vertical-stripe denim", "Leather-tab tie waist", "Shirt + trouser set"],
+  },
+  {
+    id: "noir-floral-pleated-midi",
+    name: "Noir Floral Pleated Midi Dress",
+    category: "Western Dresses",
+    price: 3500,
+    image: dr1.url,
+    sizes: SIZES_FULL,
+    description:
+      "A black accordion-pleated midi softened by a cream and tan floral motif. Moves beautifully, never tries too hard.",
+    details: ["Fine accordion pleats", "Scoop neck, long sleeves", "A-line midi silhouette"],
+  },
+  {
+    id: "ivory-ink-pleated-midi",
+    name: "Ivory Ink-Splatter Pleated Midi Dress",
+    category: "Western Dresses",
+    price: 3500,
+    image: dr2.url,
+    sizes: SIZES_FULL,
+    description:
+      "An ivory-beige pleated midi with an artistic black ink-splatter wash across the bodice and hem. Understated, with a signature.",
+    details: ["Accordion-pleated fabric", "Ink-splatter print", "Scoop neck, long sleeves"],
+  },
+  {
+    id: "crimson-panel-pleated-midi",
+    name: "Crimson Panel Pleated Midi Dress",
+    category: "Western Dresses",
+    price: 3500,
+    image: dr3.url,
+    sizes: SIZES_FULL,
+    description:
+      "A bold crimson center panel flanked by black pleats scattered with golden-yellow florals. Colour, cut, and quiet drama.",
+    details: ["Asymmetrical centre panel", "Black accordion pleats", "Golden-yellow floral graphics"],
   },
 );
 
