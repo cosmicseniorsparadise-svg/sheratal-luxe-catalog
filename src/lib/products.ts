@@ -12,6 +12,7 @@ import n5 from "@/assets/new5.jpg.asset.json";
 import n6 from "@/assets/new6.jpg.asset.json";
 import t1 from "@/assets/top1.jpg.asset.json";
 import t2 from "@/assets/top2.jpg.asset.json";
+import d1 from "@/assets/denim1.jpg.asset.json";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -200,6 +201,17 @@ products.push(
     description:
       "A soft zip-neck long-sleeve top in five easy shades — black, blush, white, wine, and navy. Your everyday essential.",
     details: ["Soft stretch jersey", "Zip neckline", "Available in 5 colours"],
+  },
+  {
+    id: "denim-co-ord-set",
+    name: "Denim Co-Ord Set",
+    category: "Western Dresses",
+    price: 5000,
+    image: d1.url,
+    sizes: SIZES_FULL,
+    description:
+      "A pinstripe denim shirt and straight-leg trouser set, cinched at the waist with a leather-tab tie. Easy, elevated, endlessly wearable.",
+    details: ["Vertical-stripe denim", "Leather-tab tie waist", "Shirt + trouser set"],
   },
 );
 
