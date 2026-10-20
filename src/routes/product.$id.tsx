@@ -1,4 +1,5 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { cart } from "@/lib/cart";
 import { useState } from "react";
 import { getProduct, formatPrice, whatsappUrl, products, type Product } from "@/lib/products";
 import { ProductImage } from "@/components/ProductImage";
@@ -35,6 +36,8 @@ export const Route = createFileRoute("/product/$id")({
 function ProductDetail() {
   const { product } = Route.useLoaderData() as { product: Product };
   const [size, setSize] = useState<string | null>(null);
+  const [needSize, setNeedSize] = useState(false);
+  const navigate = useNavigate();
 
   const message = `Hello SHERATAL,\n\nI'd like to order:\n• ${product.name}${size ? ` (Size ${size})` : ""}\n• ${formatPrice(product.price)}\n\nCould you share availability and next steps?`;
 
@@ -99,6 +102,17 @@ function ProductDetail() {
           </div>
 
           {/* CTA */}
+          <button
+            onClick={() => {
+              if (!size) { setNeedSize(true); return; }
+              cart.add(product.id, size);
+              navigate({ to: "/cart" });
+            }}
+            className="mt-8 w-full border border-[color:var(--ink)] bg-[color:var(--ink)] text-[color:var(--background)] py-3.5 text-xs tracking-[0.28em] uppercase transition hover:bg-transparent hover:text-[color:var(--ink)]"
+          >
+            Add to bag
+          </button>
+          {needSize && !size && <p className="mt-2 text-xs text-destructive">Please choose a size first.</p>}
           <a
             href={whatsappUrl(message)}
             target="_blank"
