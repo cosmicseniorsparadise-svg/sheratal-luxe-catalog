@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import badgeAsset from "@/assets/sheratal-badge.png.asset.json";
 import { assetUrl } from "@/lib/asset-url";
+import { useCart } from "@/lib/cart";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -11,6 +12,7 @@ const nav = [
 ];
 
 export function SiteHeader() {
+  const count = useCart().reduce((n, l) => n + l.qty, 0);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -55,6 +57,15 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+
+        <Link to="/cart" aria-label="Shopping bag" className="relative ml-auto md:ml-10 mr-3 md:mr-0 p-2 text-[color:var(--ink)] hover:text-[color:var(--gold)] transition">
+          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden>
+            <path d="M5 8h14l-1 12H6L5 8Z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" />
+          </svg>
+          {count > 0 && (
+            <span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 rounded-full bg-[color:var(--gold)] text-[color:var(--background)] text-[0.6rem] leading-4 text-center">{count}</span>
+          )}
+        </Link>
 
         <button
           className="md:hidden inline-flex flex-col gap-1.5 p-2"
