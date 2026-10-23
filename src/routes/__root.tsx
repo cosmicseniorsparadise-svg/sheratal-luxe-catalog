@@ -15,6 +15,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { FloatingWhatsApp } from "@/components/WhatsAppButton";
+import { Toaster } from "@/components/ui/sonner";
+import { useCartSync } from "@/lib/cart";
 
 function NotFoundComponent() {
   return (
@@ -107,6 +109,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useCartSync();
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col">
@@ -116,6 +119,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
         <FloatingWhatsApp />
+        <Toaster position="top-center" />
       </div>
     </QueryClientProvider>
   );
