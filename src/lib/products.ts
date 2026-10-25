@@ -19,6 +19,9 @@ import dr3 from "@/assets/dress3.jpg.asset.json";
 import o1 from "@/assets/office1.png.asset.json";
 import o2 from "@/assets/office2.png.asset.json";
 import { assetUrl } from "@/lib/asset-url";
+import plum from "@/assets/royal-plum-embroidered-co-ord.png.asset.json";
+import pink from "@/assets/blush-pink-embroidered-palazzo-set.jpeg.asset.json";
+import cocoa from "@/assets/cocoa-embroidered-kurta-palazzo-set.jpeg.asset.json";
 
 export const WHATSAPP_NUMBER = "919811669057";
 export const INSTAGRAM = "sheratal_";
@@ -37,6 +40,7 @@ export type Product = {
   description: string;
   details: string[];
   featured?: boolean;
+  checkoutMode?: "whatsapp";
 };
 
 // Products are structured so a future Instagram Graph API integration
@@ -273,6 +277,39 @@ products.push(
     description:
       "A soft stone-grey wrap blouse with a turn-down collar and shirred waist, paired with fluid straight-leg trousers. Relaxed tailoring that still reads sharp.",
     details: ["Drapey fluid crepe", "Crossover wrap front with button detail", "Long sleeves with button cuffs"],
+  },
+  {
+    id: "royal-plum-embroidered-co-ord-set",
+    name: "Royal Plum Embroidered Co-ord Set",
+    category: "Ethnic Wear",
+    price: 2999,
+    image: assetUrl(plum),
+    sizes: SIZES_FULL,
+    checkoutMode: "whatsapp",
+    description: "A rich plum ethnic co-ord set with delicate floral embroidery, a flowing asymmetric top and matching wide-leg trousers. An elegant choice for festive gatherings.",
+    details: ["Floral embroidered sleeves and trouser hems", "Flowing asymmetric hemline", "Matching plum top and trousers"],
+  },
+  {
+    id: "blush-pink-embroidered-palazzo-set",
+    name: "Blush Pink Embroidered Palazzo Set",
+    category: "Ethnic Wear",
+    price: 2749,
+    image: assetUrl(pink),
+    sizes: SIZES_FULL,
+    checkoutMode: "whatsapp",
+    description: "A blush-pink ethnic set with an embellished V-neck, floral detailing and statement cutwork sleeves. Matching palazzo trousers complete its graceful occasion-ready silhouette.",
+    details: ["Embellished V-neck and floral motifs", "Floral cutwork sleeve details", "Matching wide-leg palazzo trousers"],
+  },
+  {
+    id: "cocoa-embroidered-kurta-palazzo-set",
+    name: "Cocoa Embroidered Kurta Palazzo Set",
+    category: "Ethnic Wear",
+    price: 2599,
+    image: assetUrl(cocoa),
+    sizes: SIZES_FULL,
+    checkoutMode: "whatsapp",
+    description: "A deep cocoa-brown kurta set with delicate contrasting embroidery along the neckline, cuffs and hem. Coordinating palazzo trousers and a patterned dupatta bring timeless ethnic elegance.",
+    details: ["Contrasting embroidered motifs and borders", "Coordinating palazzo trousers", "Matching patterned dupatta"],
   },
 );
 

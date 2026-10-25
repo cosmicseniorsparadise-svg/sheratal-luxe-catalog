@@ -21,7 +21,7 @@ function read(): State {
   } catch {
     state = { ...EMPTY };
   }
-  return state!;
+  return state ?? EMPTY;
 }
 function set(patch: Partial<State>) {
   state = { ...read(), ...patch };
@@ -30,6 +30,9 @@ function set(patch: Partial<State>) {
   listeners.forEach((l) => l());
 }
 const reset = () => set({ lines: [], cartId: null, checkoutUrl: null });
+const resetShopify = () => set({ lines: read().lines.filter((l) => getProduct(l.id)?.checkoutMode === "whatsapp"), cartId: null, checkoutUrl: null });
+
+export const needsAssistedOrder = (lines: CartLine[]) => lines.some((l) => getProduct(l.id)?.checkoutMode === "whatsapp");
 
 const findLineId = (cart: any, variantId: string) =>
   cart?.lines?.edges?.find((e: any) => e.node.merchandise.id === variantId)?.node.id ?? null;
@@ -38,7 +41,15 @@ export const cart = {
   /** Adds a size to the Shopify cart. Returns false if it couldn't be added. */
   async add(id: string, size: string, qty = 1): Promise<boolean> {
     const p = getProduct(id);
-    if (!p) return false;
+    if (!p || !p.sizes.includes(size) || !Number.isInteger(qty) || qty <= 0) return false;
+    if (p.checkoutMode === "whatsapp") {
+      const lines = read().lines;
+      const existing = lines.find((l) => l.id === id && l.size === size);
+      set({ lines: existing
+        ? lines.map((l) => l === existing ? { ...l, qty: l.qty + qty } : l)
+        : [...lines, { id, size, qty, variantId: `local:${id}:${size}`, lineId: null }] });
+      return true;
+    }
     set({ busy: true });
     try {
       const variantId = await findVariantId(p.name, size);
@@ -49,13 +60,13 @@ export const cart = {
         const d = await storefrontApiRequest(CART_CREATE, { input: { lines: [{ quantity: qty, merchandiseId: variantId }] } });
         const c = d?.data?.cartCreate?.cart;
         if (!c?.checkoutUrl) return false;
-        set({ cartId: c.id, checkoutUrl: formatCheckoutUrl(c.checkoutUrl), lines: [{ id, size, qty, variantId, lineId: findLineId(c, variantId) }] });
+        set({ cartId: c.id, checkoutUrl: formatCheckoutUrl(c.checkoutUrl), lines: [...read().lines, { id, size, qty, variantId, lineId: findLineId(c, variantId) }] });
         return true;
       }
       if (existing?.lineId) return await cart.setQty(existing.id, existing.size, existing.qty + qty);
       const d = await storefrontApiRequest(CART_ADD, { cartId, lines: [{ quantity: qty, merchandiseId: variantId }] });
       const errs = d?.data?.cartLinesAdd?.userErrors ?? [];
-      if (isCartNotFound(errs)) { reset(); return cart.add(id, size, qty); }
+      if (isCartNotFound(errs)) { resetShopify(); return cart.add(id, size, qty); }
       if (!d || errs.length) return false;
       set({ lines: [...read().lines, { id, size, qty, variantId, lineId: findLineId(d.data.cartLinesAdd.cart, variantId) }] });
       return true;
@@ -69,6 +80,11 @@ export const cart = {
   async setQty(id: string, size: string, qty: number): Promise<boolean> {
     const { lines, cartId } = read();
     const line = lines.find((l) => l.id === id && l.size === size);
+    if (!Number.isInteger(qty)) return false;
+    if (line && getProduct(id)?.checkoutMode === "whatsapp") {
+      set({ lines: lines.map((l) => l === line ? { ...l, qty } : l).filter((l) => l.qty > 0) });
+      return true;
+    }
     if (!line?.lineId || !cartId) return false;
     set({ busy: true });
     try {
@@ -76,7 +92,7 @@ export const cart = {
         ? await storefrontApiRequest(CART_REMOVE, { cartId, lineIds: [line.lineId] })
         : await storefrontApiRequest(CART_UPDATE, { cartId, lines: [{ id: line.lineId, quantity: qty }] });
       const errs = (qty <= 0 ? d?.data?.cartLinesRemove : d?.data?.cartLinesUpdate)?.userErrors ?? [];
-      if (isCartNotFound(errs)) { reset(); return false; }
+      if (isCartNotFound(errs)) { resetShopify(); return false; }
       if (!d || errs.length) return false;
       const next = read().lines
         .map((l) => (l === line ? { ...l, qty } : l))
@@ -97,12 +113,13 @@ export const cart = {
       const d = await storefrontApiRequest(CART_QUERY, { id: cartId });
       if (!d) return;
       const c = d.data?.cart;
-      if (!c || c.totalQuantity === 0) reset();
+      if (!c || c.totalQuantity === 0) resetShopify();
     } catch (e) {
       console.error("Failed to sync bag:", e);
     }
   },
   checkout() {
+    if (needsAssistedOrder(read().lines)) return;
     const url = read().checkoutUrl;
     if (url) window.open(url, "_blank");
   },
