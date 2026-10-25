@@ -11,3 +11,4 @@
 
 - Resolve Lovable asset pointers through `src/lib/asset-url.ts` before rendering; their relative hosting-only paths do not exist on external deployments such as Vercel.
 - Checkout runs through Shopify: the bag (src/lib/cart.ts) syncs to a Shopify cart via the Storefront API (src/lib/shopify.ts), matching catalog products to Shopify products by exact title + Size; keep titles identical in both places so add-to-bag keeps working.
+- Products explicitly marked `checkoutMode: "whatsapp"` stay local in the shared bag; a bag containing them uses an assisted WhatsApp order, never a partial Shopify checkout. Shopify sync must preserve those local lines.

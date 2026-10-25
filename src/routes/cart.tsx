@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { useCart, useCartBusy, cart, cartTotal, unitPrice } from "@/lib/cart";
-import { getProduct, formatPrice } from "@/lib/products";
+import { useCart, useCartBusy, cart, cartTotal, unitPrice, needsAssistedOrder } from "@/lib/cart";
+import { getProduct, formatPrice, whatsappUrl } from "@/lib/products";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/cart")({
   head: () => ({
@@ -20,6 +21,8 @@ export const Route = createFileRoute("/cart")({
 function CartPage() {
   const lines = useCart();
   const busy = useCartBusy();
+  const assisted = needsAssistedOrder(lines);
+  const orderMessage = `Hello SHERATAL, I'd like to order:\n${lines.map((l) => `${getProduct(l.id)?.name} — Size ${l.size} × ${l.qty}: ${formatPrice(unitPrice(l.id) * l.qty)}`).join("\n")}\nSubtotal: ${formatPrice(cartTotal(lines))}\nPlease confirm availability, delivery and payment.`;
   useEffect(() => { cart.sync(); }, []);
   return (
     <div className="container-lux pt-10 md:pt-16 pb-24 max-w-4xl">
@@ -59,8 +62,19 @@ function CartPage() {
           <div className="mt-8 flex flex-col items-end gap-4">
             <p className="text-lg">Subtotal <span className="ml-3 font-medium">{formatPrice(cartTotal(lines))}</span></p>
             <p className="text-xs text-muted-foreground">Prices include VAT.</p>
-            <button type="button" disabled={busy} onClick={() => cart.checkout()} className="btn-gold btn-gold-hover disabled:opacity-60">{busy ? "Updating…" : "Proceed to secure checkout"}</button>
-            <p className="text-xs text-muted-foreground">Pay by UPI, cards, net banking and more on the secure checkout page.</p>
+            {assisted ? (
+              <>
+                <Button asChild variant="ghost" className="btn-gold btn-gold-hover h-auto rounded-none">
+                  <a href={whatsappUrl(orderMessage)} target="_blank" rel="noopener noreferrer">Order bag on WhatsApp</a>
+                </Button>
+                <p className="text-xs text-muted-foreground text-right">These new outfits require availability and payment confirmation on WhatsApp.</p>
+              </>
+            ) : (
+              <>
+                <button type="button" disabled={busy} onClick={() => cart.checkout()} className="btn-gold btn-gold-hover disabled:opacity-60">{busy ? "Updating…" : "Proceed to secure checkout"}</button>
+                <p className="text-xs text-muted-foreground">Pay by UPI, cards, net banking and more on the secure checkout page.</p>
+              </>
+            )}
           </div>
         </>
       )}
